@@ -6,19 +6,19 @@
 	var projectsArray = [
 		{
 			"id": "projectTykOperator",
-			"url": "https://github.com/TykTechnologies/tyk-operator"
+			"url": "https://github.com/Atharvakarekar/covid-19"
 		},
 		{
 			"id": "projectCloudixia",
-			"url": "https://ajtima.com"
+			"url": "https://github.com/Atharvakarekar/image-app"
 		},
 		{
 			"id": "projectServ",
-			"url": "https://www.getserv.io"
+			"url": "https://github.com/Atharvakarekar/SOM"
 		},
 		{
 			"id": "projectSedkodes",
-			"url": "https://www.youtube.com/channel/UCXR-k7wwwhdovpXXkRitJ_g"
+			"url": "https://github.com/Atharvakarekar/Frontend-for-geeta-chat"
 		}
 	]
 
