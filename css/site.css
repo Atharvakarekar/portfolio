@@ -440,3 +440,7 @@ ul { margin: 0; padding: 0; }
   .stat + .stat { border-left: 0; border-top: 1px solid var(--line); }
   .contact__actions .btn--lg { width: 100%; font-size: 15px; }
 }
+
+/* Nav call-to-action (Résumé) */
+.nav__links a.nav__cta { border: 1px solid var(--line); color: var(--ink); margin-left: 6px; }
+.nav__links a.nav__cta:hover, .nav__links a.nav__cta.is-active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
