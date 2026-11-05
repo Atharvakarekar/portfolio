@@ -1,823 +1,348 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96989482-1"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atharva Karekar · Engineer, security analyst, now business school</title>
+  <meta name="description" content="Atharva Karekar: computer engineer, two years as a security analyst for banking clients at ARCON, now at SDA Bocconi Asia Center. Looking for a summer internship in consulting, product or project management.">
+  <meta name="author" content="Atharva Karekar">
+  <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
 
-	gtag('config', 'UA-96989482-1');
-	</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Atharva Karekar">
+  <meta property="og:description" content="Engineer → security analyst → business school. Looking for a summer internship in consulting, product or project management.">
+  <meta property="og:url" content="https://atharvakarekar.github.io/portfolio/">
+  <meta property="og:image" content="https://atharvakarekar.github.io/portfolio/images/atharva.jpg">
+  <meta name="twitter:card" content="summary">
 
-
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>it's me</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Portfolio" />
-	<meta name="keywords" content="portfolio resume" />
-	<meta name="author" content="Sedky A" />
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+  <script>
+    // Apply saved theme before paint to avoid a flash.
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
-
 <body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-			<!-- Navbar Toggle Button -->
-			<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar"
-				aria-expanded="false" aria-controls="navbar"><i></i></a>
+  <a class="skip" href="#main">Skip to content</a>
 
-			<!-- Left navbar -->
-			<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-				<div class="text-center">
-					<div class="author-img" style="background-image: url(images/IMG_20230623_224405_889.png);"></div>
-					<h1 id="colorlib-logo"><a href="index.html">Atharva Karekar</a></h1>
-					<span class="position"><a href="#"><b>Tech Enthusiast</b></a></span>
-				</div>
-				<!-- Navbar Items -->
-				<nav id="colorlib-main-menu" role="navigation" class="navbar">
-					<div id="navbar" class="collapse">
-						<ul>
-							<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-							<li><a href="#" data-nav-section="about">About</a></li>
-							<li><a href="#" data-nav-section="work">Work</a></li>
-							<li><a href="#" data-nav-section="services">What Do I Do</a></li>
-							<!-- <li><a href="#" data-nav-section="skills">Skills</a></li> -->
-							<li><a href="#" data-nav-section="education">Education</a></li>
-							<!-- <li><a href="#" data-nav-section="experience">Experience</a></li> -->
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a href="#top" class="nav__logo" aria-label="Atharva Karekar, back to top">ak<span>.</span></a>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#toolkit">Toolkit</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1.5 12h3M19.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+      </button>
+    </div>
+  </header>
 
-							<li><a href="blog/index.html" data-nav-section="blog">Blog</a></li>
-							<li><a href="#" data-nav-section="contact">Contact</a></li>
-						</ul>
-					</div>
-				</nav>
-				<!-- Navbar Footer -->
-				<div class="colorlib-footer">
-					<ul>
-						<li><a href="https://www.linkedin.com/in/atharva-karekar-7a90b8202/" target="_blank" title="LinkedIn"><i
-									class="icon-social-linkedin"></i></a></li>
-						<li><a href="https://github.com/Atharvakarekar" target="_blank" title="GitHub"><i
-									class="icon-social-github"></i></a>
-						</li>
-						<li><a href="20120117.atharvakarekar@gmail.com" title="Email"><i class="icon-mail"></i></a>
-						</li>
-						<!-- <li><a href="https://www.youtube.com/channel/UCXR-k7wwwhdovpXXkRitJ_g" title="youtube"><i class="icon-youtube"></i></a>
-						</li> -->
-					</ul>
-				</div>
-			</aside>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero wrap">
+      <div class="hero__text">
+        <p class="status"><span class="status__dot"></span>Open to summer internships: consulting · product · project management</p>
+        <h1>Atharva Karekar</h1>
+        <p class="hero__lede">
+          I started as a <em>computer engineer</em>, spent about two years as a
+          <em>security analyst</em> for major banking clients, and I'm now at
+          <em>business school</em>. I like problems that are part business and part technical.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="mailto:atharvakarekar4784@gmail.com">Email me</a>
+          <a class="btn" href="#work">See my work</a>
+        </div>
+        <ul class="socials" aria-label="Links">
+          <li><a href="https://www.linkedin.com/in/atharva-karekar-7a90b8202/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4z"/></svg>LinkedIn</a></li>
+          <li><a href="https://github.com/Atharvakarekar" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a></li>
+          <li><a href="mailto:atharvakarekar4784@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.3 7H4v.6l8 5.4 8-5.4V7h-.3z"/></svg>atharvakarekar4784@gmail.com</a></li>
+        </ul>
+      </div>
+      <figure class="hero__photo">
+        <img src="images/atharva.jpg" width="640" height="640" alt="Atharva Karekar at the beach in Mumbai">
+        <figcaption>Mumbai, India</figcaption>
+      </figure>
+    </section>
 
-			<div id="colorlib-main">
-				<section id="colorlib-hero" class="js-fullheight" data-section="home">
-					<div class="flexslider js-fullheight">
-						<ul class="slides">
-							<li style="background-image: url(https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg);">
-								<div class="overlay"></div>
-								<div class="container-fluid transparent-overlay">
-									<div class="row">
-										<div
-											class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-											<div class="slider-text-inner js-fullheight">
-												<div class="desc">
-													<h1>Hi! <br>I'm Atharva.</h1>
-													<h2>I am a <b>{Algorithmic Artisan}</b></h2>
+    <!-- STATS -->
+    <section class="stats wrap" aria-label="Highlights">
+      <div class="stat"><strong>National winner</strong><span>Smart India Hackathon 2023</span></div>
+      <div class="stat"><strong>2 papers</strong><span>published on IEEE Xplore</span></div>
+      <div class="stat"><strong>~2 years</strong><span>security analyst, banking clients</span></div>
+      <div class="stat"><strong>Green Belt</strong><span>Lean Six Sigma</span></div>
+    </section>
 
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
+    <!-- ABOUT -->
+    <section class="section wrap" id="about">
+      <header class="section__head">
+        <p class="eyebrow">01 · About</p>
+        <h2>Spreadsheets into systems people actually use.</h2>
+      </header>
+      <div class="about">
+        <div class="about__body">
+          <p>
+            I studied Computer Engineering with Honors in AI/ML at A.P. Shah Institute of Technology,
+            where I led the Deep Learning Cell, mentored hackathon teams, and won the Smart India Hackathon
+            with Team BitHeads.
+          </p>
+          <p>
+            After that I spent about two years as a Security Analyst at <strong>ARCON</strong>, working in
+            the environments of major banking clients: static and dynamic code analysis, vulnerability
+            scanning, inside environments where getting it wrong is expensive.
+          </p>
+          <p>
+            Now I'm in the <strong>IMB 9</strong> cohort at <strong>SDA Bocconi Asia Center</strong>.
+            I coordinate strategy and operations for the placement committee, which is how I ended up
+            building the portal the committee now runs on.
+          </p>
+        </div>
+        <aside class="about__card">
+          <h3>Looking for</h3>
+          <p>A summer internship in <strong>consulting</strong>, <strong>product management</strong> or <strong>project management</strong>, ideally where the problem is part business and part technical.</p>
+          <h3>What I bring</h3>
+          <ul class="ticks">
+            <li>I can build the tool myself, not just spec it</li>
+            <li>Experience in regulated, risk-heavy client environments</li>
+            <li>Process discipline from Lean Six Sigma</li>
+          </ul>
+          <a class="link" href="mailto:atharvakarekar4784@gmail.com">Let's talk →</a>
+        </aside>
+      </div>
+    </section>
 
-				<section class="colorlib-about" data-section="about">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-									<div class="col-md-12">
-										<div class="about-desc">
-											<span class="heading-meta">About</span>
-											<h2 class="colorlib-heading">Who Am I?</h2>
-											<p><strong>Hi I'm Atharva,</strong>
-												a Machine Learning Developer, and student at <a href="https://www.apsit.edu.in/">APSIT</a>.
-												<br><br>
-												- I love to <a href="https://www.kaggle.com/karekaratharvaajit">code and excercise,</a> especially when it comes to my passion, software.
-												<br><br>
-												- I love to talk about infrastructure, programming, and everything Serverless / Cloud.
-												<br><br>
-												- I love to build things.  For <a href="https://github.com/Atharvakarekar">myself and the community.</a> 
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-4 animate-box" data-animate-effect="fadeInRight">
-										<div class="services color-2">
-											<span class="icon2"><i class="icon-star"></i></span>
-											<h3>Machine Learning Developer</h3>
-										</div>
-									</div>
-									<div class="col-md-4 animate-box" data-animate-effect="fadeInTop">
-										<div class="services color-3">
-											<span class="icon2"><i class="icon-steam"></i></span>
-											<h3>Student</h3>
-										</div>
-									</div>
-									<div class="col-md-4 animate-box" data-animate-effect="fadeInBottom">
-										<div class="services color-4">
-											<span class="icon2"><i class="icon-coffee"></i></span>
-											<h3>Redditor</h3>
-										</div>
-									</div>
-								</div>
-								<!-- <div class="row">
-									<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-										<div class="hire">
-											<h2>Interested in what I am currently working on? Feel free to visit my
-												GitHub!
-											</h2>
-											<a href="https://github.com/sedkis" target="_blank" class="btn-hire">View <i
-													class="icon-github"></i></a>
-										</div>
-									</div>
-								</div> -->
-							</div>
-						</div>
-					</div>
-				</section>
+    <!-- JOURNEY -->
+    <section class="section wrap" id="journey">
+      <header class="section__head">
+        <p class="eyebrow">02 · Journey</p>
+        <h2>Three branches, one main line.</h2>
+        <p class="section__sub">Engineering and security merge into business.</p>
+      </header>
 
-				<section class="colorlib-work" data-section="work">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-								data-animate-effect="fadeInLeft">
-								<span class="heading-meta">My Work</span>
-								<h2 class="colorlib-heading animate-box">Passion projects.</h2>
-							</div>
-						</div>
-						<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-							<div class="col-md-12">
-								<p class="work-menu"><span>
-									<!-- <a href="https://docs.google.com/document/d/1lJH9nU8XLG6Oy8iU6f2EV0PaA6UqWCXtGyShO1CDwHQ/edit?usp=sharing"
-															target="_blank" class="btn btn-primary btn-learn">View
-															CV <i class="fas fa-download"></i></a></p> -->
-									
-									<!-- <a class="active">View CV Here</a></span></p> -->
-								
-							</div>
-						</div>
-						<div class="row">
+      <ol class="graph">
+        <li class="commit" data-lane="business">
+          <span class="commit__lane">business</span>
+          <div class="commit__body">
+            <p class="commit__meta"><span class="tag tag--now">HEAD · now</span></p>
+            <h3>IMB 9, SDA Bocconi Asia Center</h3>
+            <p>Business school. Strategy, financial modelling and valuation, go-to-market, and case competitions.</p>
+            <ul>
+              <li><strong>Placement Coordinator, strategy &amp; operations.</strong> Runs operations for the IMB 9 placement committee and built the system it runs on (see <a href="#p-placement">Placement Committee System</a>).</li>
+              <li><strong>Lean Six Sigma Green Belt.</strong></li>
+              <li>Built <a href="https://atharvakarekar.github.io/Consulting/" target="_blank" rel="noopener">Deadline Dash</a> for the Consulting Day stall.</li>
+            </ul>
+          </div>
+        </li>
 
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft" id="projectSedkodes">
-								<div class="project"
-									style="background-image: url(images/projects/240387319-bc8cb3cb-cfda-4e7b-ab66-26ebd3eb25a6.jpeg);background-size: contain;">
-									<div class="desc">
-										<div class="con">
-											<h3><a>Bhagwat Geeta Chatbot </a></h3>
-											<h4><a>Personal Project</a></h4>
-											<span>Real Life Krishna which answers on Life and Philosophy</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft" id="projectSedkodes">
-								<div class="project"
-								  style="background-image: url(https://github.com/Atharvakarekar/Frontend-for-geeta-chat/raw/main/images/projects/240387319-bc8cb3cb-cfda-4e7b-ab66-26ebd3eb25a6.jpeg); background-size: contain;">
-								  <div class="desc">
-									<div class="con">
-									  <h3><a>Bhagwat Geeta Chatbot</a></h3>
-									  <h4><a>Personal Project</a></h4>
-									  <span>Real Life Krishna which answers on Life and Philosophy</span>
-									</div>
-								  </div>
-								</div>
-							  </div> -->
-							  
+        <li class="commit" data-lane="security">
+          <span class="commit__lane">security</span>
+          <div class="commit__body">
+            <p class="commit__meta"><span class="tag">~2 years</span></p>
+            <h3>Security Analyst, ARCON</h3>
+            <p>Security work for major banking clients.</p>
+            <ul>
+              <li>Static and dynamic code analysis of client applications.</li>
+              <li>Vulnerability scanning with Snyk.</li>
+              <li>Worked inside regulated banking client environments, where findings need to be clear enough for engineering and risk teams to act on.</li>
+            </ul>
+          </div>
+        </li>
 
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft" id="projectServ">
-								<div class="project"
-									style="background-image: url(images/Som.png);">
-									<div class="desc">
-										<div class="con">
-											<h3><a>Self Organizing Maps</a></h3>
-											<h4><a>Personal Project</a></h4>
-											<span>Adjusting Datapoints in the Given Frameset .</span>
-										</div>
-									</div>
-								</div>
-							</div>
+        <li class="commit" data-lane="engineering">
+          <span class="commit__lane">engineering</span>
+          <div class="commit__body">
+            <p class="commit__meta"><span class="tag">B.E.</span></p>
+            <h3>B.E. Computer Engineering, Honors in AI/ML</h3>
+            <p>A.P. Shah Institute of Technology, University of Mumbai.</p>
+            <ul>
+              <li><strong>National winner, Smart India Hackathon 2023</strong> with Team BitHeads: an audit of the crypto libraries OpenVPN uses.</li>
+              <li><strong>Two research papers</strong> published on IEEE Xplore.</li>
+              <li><strong>President</strong>, Deep Learning Cell.</li>
+              <li><strong>Head Mentor</strong>, Hackwave.</li>
+              <li><strong>Data Analyst Intern</strong>, Archytas Innovation Labs.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft" id="projectCloudixia">
-								<div class="project"
-									style="background-image: url(images/tti.png);">
-									<div class="desc">
-										<div class="con">
-											<h3><a>Text to Image AI Generator</a></h3>
-											<h4><a>Academic Project</a></h4>
-											<span>Converts Text to Image.</span>
-										</div>
-									</div>
-								</div>
-							</div>
+    <!-- WORK -->
+    <section class="section wrap" id="work">
+      <header class="section__head">
+        <p class="eyebrow">03 · Work</p>
+        <h2>Things I've built.</h2>
+        <p class="section__sub">Recent first. Most of it started as a real problem someone had.</p>
+      </header>
 
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft" id="projectTykOperator">
-								<div class="project"
-									style="background-image: url(images/Covid.jpeg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a>Covid-19 Dashboard</a></h3>
-											<h4><a>Cloud Project</a></h4>
-											<span>Covid-19 Dashboard Hosted On AWS Cloud Services</span>
-										</div>
-									</div>
-								</div>
-							</div>
+      <div class="projects">
+        <article class="project project--feature" id="p-placement">
+          <div class="project__top">
+            <span class="project__kind">Operations · Full-stack</span>
+            <span class="project__year">IMB 9</span>
+          </div>
+          <h3>Placement Committee System</h3>
+          <p>A full-stack operations portal for the IMB 9 placement committee. Each wing has its own workspace, with cross-wing requests, event approvals with email alerts, Excel import and export, and a log of who changed what. It replaced the separate Excel trackers each wing used to keep.</p>
+          <ul class="chips"><li>Node.js</li><li>Express</li><li>MySQL</li><li>Process design</li></ul>
+          <div class="project__links">
+            <a href="https://github.com/Atharvakarekar/Placement" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </article>
 
-						</div>
-						<!-- <div class="row">
-							<div class="col-md-12 animate-box">
-								<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i
-											class="icon-reload"></i></a></p>
-							</div>
-						</div> -->
-					</div>
-				</section>
+        <article class="project project--feature project--game">
+          <div class="project__top">
+            <span class="project__kind">Game · Event</span>
+            <span class="project__year">Consulting Day</span>
+          </div>
+          <h3>Deadline Dash</h3>
+          <p>A 45-second consulting survival game built for our Consulting Day stall. Catch the chai, dodge the quick calls, and try to climb from Chai Runner to Global Managing Partner.</p>
+          <ul class="chips"><li>HTML</li><li>JavaScript</li><li>Game design</li></ul>
+          <div class="project__links">
+            <a class="btn btn--primary btn--sm" href="https://atharvakarekar.github.io/Consulting/" target="_blank" rel="noopener">Play it ▶</a>
+          </div>
+        </article>
 
-				<section class="colorlib-services" data-section="services">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-								data-animate-effect="fadeInLeft">
-								<span class="heading-meta">What I do?</span>
-								<h2 class="colorlib-heading">Problems I like solving.</h2>
-							</div>
-						</div>
-						<div class="row row-pt-md">
-							<div class="col-md-4 text-center animate-box">
-								<div class="services color-1">
-									<span class="icon">
-										<i class="icon-code-outline"></i>
-									</span>
-									<div class="desc">
-										<h3>Software Engineering</h3>
-										<p>Across the stack, including responsive web development</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 text-center animate-box">
-								<div class="services color-2">
-									<span class="icon">
-										<i class="icon-data"></i>
-									</span>
-									<div class="desc">
-										<h3>Database Designing</h3>
-										<p>Platform planning, from failover, redundancy, high availability, and extreme TPS environments</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 text-center animate-box">
-								<div class="services color-3">
-									<span class="icon">
-										<i class="icon-layers2"></i>
-									</span>
-									<div class="desc">
-										<h3>Machine Learning</h3>
-										<p>Gathering dataset requirements and translating that into written technical specifications</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 text-center animate-box">
-								<div class="services color-4">
-									<span class="icon">
-										<i class="icon-user"></i>
-									</span>
-									<div class="desc">
-										<h3>Presentation Skills</h3>
-										<p>Excellent communication and presentation skills in front of large and medium sized crowds, from developers to the C-suite</p>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="col-md-4 text-center animate-box">
-								<div class="services color-5">
-									<span class="icon">
-										<i class="icon-flow-merge"></i>
-									</span>
-									<div class="desc">
-										<h3>Containerization (Docker & K8S)</h3>
-										<p>Deep experience in containers and container orchestration platforms like Docker and Kubernetes (K8S)</p>
-									</div>
-								</div>
-							</div> -->
-							<div class="col-md-4 text-center animate-box">
-								<div class="services color-6">
-									<span class="icon">
-										<i class="icon-cloud4"></i>
-									</span>
-									<div class="desc">
-										<h3>Cloud Services</h3>
-										<p>AWS Certified, GCP, Azure, DigitalOcean, and more.  Talk to me about everything serverless.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+        <article class="project">
+          <div class="project__top">
+            <span class="project__kind">Security research</span>
+            <span class="project__year">SIH 2023 · Winner</span>
+          </div>
+          <h3>OpenVPN crypto library audit</h3>
+          <p>Smart India Hackathon 2023 with Team BitHeads. Static and dynamic analysis of the crypto libraries OpenVPN uses for IPsec over IPv6, looking for vulnerabilities nobody had found yet.</p>
+          <ul class="chips"><li>C</li><li>Static analysis</li><li>Dynamic analysis</li></ul>
+          <div class="project__links">
+            <a href="https://github.com/Atharvakarekar/Investigation-of-vulnerabilities-in-implementation-of-crypto-library." target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </article>
 
-				<!-- <div id="colorlib-counter" class="colorlib-counters"
-					style="background-image: url(images/cover_bg1.png);" data-stellar-background-ratio="0.5">
-					<div class="overlay"></div>
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-3 text-center animate-box">
-								<span class="colorlib-counter js-counter" data-from="0" data-to="13" data-speed="5000"
-									data-refresh-interval="50"></span>
-								<span class="colorlib-counter-label">Projects</span>
-							</div>
-							<div class="col-md-3 text-center animate-box">
-								<span class="colorlib-counter js-counter" data-from="0" data-to="67" data-speed="5000"
-									data-refresh-interval="50"></span>
-								<span class="colorlib-counter-label">Pull Requests</span>
-							</div>
-							<div class="col-md-3 text-center animate-box">
-								<span class="colorlib-counter js-counter" data-from="0" data-to="4365" data-speed="5000"
-									data-refresh-interval="50"></span>
-								<span class="colorlib-counter-label">Code Commits</span>
-							</div>
-							<div class="col-md-3 text-center animate-box">
-								<span class="colorlib-counter js-counter" data-from="0" data-to="9001" data-speed="5000"
-									data-refresh-interval="50"></span>
-								<span class="colorlib-counter-label">Cups of coffee</span>
-							</div>
-						</div>
-					</div>
-				</div> -->
+        <article class="project">
+          <div class="project__top">
+            <span class="project__kind">NLP · EdTech</span>
+          </div>
+          <h3>FreQ</h3>
+          <p>Upload past exam papers as PDFs, Word files or scans. FreQ groups repeated questions using sentence embeddings and ranks them by how often they appear.</p>
+          <ul class="chips"><li>Python</li><li>Transformers</li><li>OCR</li></ul>
+          <div class="project__links">
+            <a href="https://github.com/Atharvakarekar/FreQ" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </article>
 
-				<!-- <section class="colorlib-skills" data-section="skills">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-								data-animate-effect="fadeInLeft">
-								<span class="heading-meta">My Specialty</span>
-								<h2 class="colorlib-heading animate-box">Let's get specific</h2>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>AngularJs & Angular2</h3>
-									<div class="progress">
-										<div class="progress-bar color-1" role="progressbar" aria-valuenow="80"
-											aria-valuemin="0" aria-valuemax="100" style="width:80%">
-											<span>80%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>AWS</h3>
-									<div class="progress">
-										<div class="progress-bar color-3" role="progressbar" aria-valuenow="70"
-											aria-valuemin="0" aria-valuemax="100" style="width:70%">
-											<span>70%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>Databases (SQL & NoSQL)</h3>
-									<div class="progress">
-										<div class="progress-bar color-3" role="progressbar" aria-valuenow="75"
-											aria-valuemin="0" aria-valuemax="100" style="width:75%">
-											<span>75%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>Containerization</h3>
-									<div class="progress">
-										<div class="progress-bar color-5" role="progressbar" aria-valuenow="90"
-											aria-valuemin="0" aria-valuemax="100" style="width:90%">
-											<span>90%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>GraphQL</h3>
-									<div class="progress">
-										<div class="progress-bar color-1" role="progressbar" aria-valuenow="80"
-											aria-valuemin="0" aria-valuemax="100" style="width:80%">
-											<span>80%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>GCP (Google Cloud Platform)</h3>
-									<div class="progress">
-										<div class="progress-bar color-3" role="progressbar" aria-valuenow="70"
-											aria-valuemin="0" aria-valuemax="100" style="width:70%">
-											<span>70%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>Java</h3>
-									<div class="progress">
-										<div class="progress-bar color-5" role="progressbar" aria-valuenow="90"
-											aria-valuemin="0" aria-valuemax="100" style="width:90%">
-											<span>90%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>JavaScript/ES6/Typescript</h3>
-									<div class="progress">
-										<div class="progress-bar color-1" role="progressbar" aria-valuenow="80"
-											aria-valuemin="0" aria-valuemax="100" style="width:80%">
-											<span>80%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section> -->
+        <article class="project">
+          <div class="project__top">
+            <span class="project__kind">Marketing analytics</span>
+          </div>
+          <h3>Marketing mix &amp; attribution</h3>
+          <p>Regression and attribution modelling on customer touchpoint data to see which marketing channels actually earn their ROI, plus launch and seasonal analysis.</p>
+          <ul class="chips"><li>Python</li><li>pandas</li><li>Regression</li></ul>
+          <div class="project__links">
+            <a href="https://github.com/Atharvakarekar/Integrated-Marketing-Optimization-and-Performance-Enhancement" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </article>
 
-				<section class="colorlib-education" data-section="education">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-								data-animate-effect="fadeInLeft">
-								<span class="heading-meta">Education</span>
-								<h2 class="colorlib-heading animate-box">Education</h2>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-								<div class="fancy-collapse-panel">
-									<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-										<div class="panel panel-default">
-											<div class="panel-heading" role="tab" id="headingOne">
-												<h4 class="panel-title">
-													<a data-toggle="collapse" data-parent="#accordion"
-														href="#collapseOne" aria-expanded="true"
-														aria-controls="collapseOne">Bachelor of Computer Science (BE)
-													</a>
-												</h4>
-											</div>
-											<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-												aria-labelledby="headingOne">
-												<div class="panel-body">
-													<div class="row">
-														<div class="colorlib-feature edu-feature colorlib-feature-sm">
-															<div class="colorlib-icon">
-																<img src="images/download.png" class="img-responsive"
-																	alt="Mumbai University">
-															</div>
-															<div class="colorlib-text edu-feature__desc">
-																<a href="https://www.uwo.ca/" target="_blank"><b>Mumbai University</b></a>
-																<span class="heading-meta">Persuing</span>
-																<b>Bachelor of Computer Science (BE)</b>
-																<ul>
-																	<li>
-																		Major in Computer Science
-																	</li>
-																</ul>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- <div class="panel panel-default">
-											<div class="panel-heading" role="tab" id="headingTwo">
-												<h4 class="panel-title">
-													<a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-														href="#collapseTwo" aria-expanded="false"
-														aria-controls="collapseTwo">Bachelor Degree of Computer Science
-													</a>
-												</h4>
-											</div>
-											<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-												aria-labelledby="headingTwo">
-												<div class="panel-body">
-													<p>Far far away, behind the word <strong>mountains</strong>, far
-														from the countries Vokalia and Consonantia, there live the blind
-														texts. Separated they live in Bookmarksgrove right at the coast
-														of the Semantics, a large language ocean.</p>
-													<ul>
-														<li>Separated they live in Bookmarksgrove right</li>
-														<li>Separated they live in Bookmarksgrove right</li>
-													</ul>
-												</div>
-											</div>
-										</div> -->
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+        <article class="project">
+          <div class="project__top">
+            <span class="project__kind">AI · Consumer app</span>
+          </div>
+          <h3>Bucket list planner</h3>
+          <p>A dynamic bucket list planner that suggests new goals using AI.</p>
+          <ul class="chips"><li>Python</li><li>Streamlit</li><li>AI</li></ul>
+          <div class="project__links">
+            <a href="https://h8ckbfmskzjunm2crdqh7r.streamlit.app" target="_blank" rel="noopener">Live app ↗</a>
+            <a href="https://github.com/Atharvakarekar/Bucketlist" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </article>
+      </div>
 
-				<!-- <section class="colorlib-experience" data-section="experience">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-								data-animate-effect="fadeInLeft">
-								<span class="heading-meta">Experience</span>
-								<h2 class="colorlib-heading animate-box">Work Experience</h2>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="timeline-centered">
+      <details class="more">
+        <summary>More projects <span aria-hidden="true">+</span></summary>
+        <ul class="more__list">
+          <li><a href="https://github.com/Atharvakarekar/Atharva-Karekar-TA-News-Article-Deduplication" target="_blank" rel="noopener">News article deduplication</a><span>Near-duplicate detection with MinHash</span></li>
+          <li><a href="https://github.com/Atharvakarekar/BreatheAir" target="_blank" rel="noopener">BreatheAir</a><span>Predicting Mumbai's air quality</span></li>
+          <li><a href="https://github.com/Atharvakarekar/Neural-Style-Transfer-" target="_blank" rel="noopener">Neural style transfer</a><span>With a Streamlit front end</span></li>
+          <li><a href="https://github.com/Atharvakarekar/Geeta-bot" target="_blank" rel="noopener">Geeta bot</a><span>A chatbot that answers questions on life and philosophy from the Bhagavad Gita</span></li>
+          <li><a href="https://github.com/Atharvakarekar/SOM" target="_blank" rel="noopener">Self-organizing maps</a><span>Unsupervised clustering and visualisation</span></li>
+          <li><a href="https://github.com/Atharvakarekar/covid-19" target="_blank" rel="noopener">COVID-19 dashboard</a><span>Cloud computing project hosted on AWS</span></li>
+          <li><a href="https://github.com/Atharvakarekar/Reinforcement-Learning-with-OpenAI-Gym" target="_blank" rel="noopener">Reinforcement learning with OpenAI Gym</a><span>Training agents in Gym environments</span></li>
+          <li><a href="https://github.com/Atharvakarekar/SleepPatterns-Productivity-Insights" target="_blank" rel="noopener">Sleep patterns &amp; productivity</a><span>Exploratory data analysis</span></li>
+        </ul>
+        <a class="link" href="https://github.com/Atharvakarekar?tab=repositories" target="_blank" rel="noopener">All repositories on GitHub →</a>
+      </details>
+    </section>
 
-									<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-										<div class="timeline-entry-inner">
-											<div class="timeline-icon color-1">
-												<i class="icon-code"></i>
-											</div>
-											<div class="timeline-label">
-												<h2 class="mb-2">Software Developer</h2>
-												<h4 class="mb-0"><a href="https://www.kings.uwo.ca/"
-														target="_blank">King's University College</a></h4>
-												<span class="text-muted">Oct 2017 - Current</span>
-												<ul class="mb-0">
-													<li>
-														Responsible for project planning, requirements gathering,
-														writing technical documentations, developing and maintaining
-														practical applications to solve problems.
-													</li>
-													<li>
-														Designed and developed a progressive web application that
-														centralizes services, resources and tools provided by the
-														university to create a unique experience for approximately 3,500
-														students.
-													</li>
-													<li>
-														Built an in-house project management solution to provide
-														cross-functional teams the ability to collaborate and meet
-														project requirements and deadlines.
-													</li>
-												</ul>
-											</div>
-										</div>
-									</article>
+    <!-- TOOLKIT -->
+    <section class="section wrap" id="toolkit">
+      <header class="section__head">
+        <p class="eyebrow">04 · Toolkit</p>
+        <h2>What I work with.</h2>
+      </header>
+      <div class="toolkit">
+        <div class="kit" data-lane="engineering">
+          <h3><span class="dot"></span>Engineering</h3>
+          <ul>
+            <li>Python &amp; JavaScript</li>
+            <li>Node.js, Express &amp; MySQL</li>
+            <li>React, Flask &amp; Streamlit</li>
+            <li>pandas, NLTK &amp; Transformers</li>
+            <li>Jupyter for analysis</li>
+          </ul>
+        </div>
+        <div class="kit" data-lane="security">
+          <h3><span class="dot"></span>Security</h3>
+          <ul>
+            <li>Static &amp; dynamic code analysis</li>
+            <li>Vulnerability scanning with Snyk</li>
+            <li>Banking client environments</li>
+            <li>Crypto library research</li>
+          </ul>
+        </div>
+        <div class="kit" data-lane="business">
+          <h3><span class="dot"></span>Business</h3>
+          <ul>
+            <li>Lean Six Sigma Green Belt</li>
+            <li>Financial modelling &amp; valuation</li>
+            <li>Go-to-market strategy</li>
+            <li>Case interviews &amp; competitions</li>
+            <li>Excel trackers &amp; dashboards</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-									<article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-										<div class="timeline-entry-inner">
-											<div class="timeline-icon color-2">
-												<i class="icon-code"></i>
-											</div>
-											<div class="timeline-label">
-												<h2 class="mb-2">Web
-													Developer</h2>
-												<h4 class="mb-0"><a href="https://www.eighty8.co/"
-														target="_blank">Eighty8 Ventures</a></h4>
-												<span class="text-muted">Jan 2017 - Jan 2018</span>
-												<ul class="mb-0">
-													<li>
-														Developed microservices responsible for user management, account
-														services, payment processing and geolocation services using the
-														Laravel PHP framework.
-													</li>
-													<li>
-														Utilized wireframe and technical documentations to design and
-														construct front-end web applications to meet deadlines.
-													</li>
-													<li>
-														Created and executed unit/integration test plans to uncover,
-														identify and fix software bugs to ensure a minimum of 98% code
-														coverage.
-													</li>
-												</ul>
-											</div>
-										</div>
-									</article>
+    <!-- CONTACT -->
+    <section class="section wrap contact" id="contact">
+      <p class="eyebrow">05 · Contact</p>
+      <h2>Say hello.</h2>
+      <p class="contact__lede">Hiring summer interns for consulting, product or project management, or just want to swap notes? My inbox is open.</p>
+      <div class="contact__actions">
+        <a class="btn btn--primary btn--lg" href="mailto:atharvakarekar4784@gmail.com">atharvakarekar4784@gmail.com</a>
+        <button class="btn btn--lg copy" type="button" data-copy="atharvakarekar4784@gmail.com">Copy email</button>
+      </div>
+      <p class="contact__aside">Or <a href="https://atharvakarekar.github.io/Consulting/" target="_blank" rel="noopener">play Deadline Dash</a> and see if you can make Global Managing Partner.</p>
+    </section>
+  </main>
 
-									<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-										<div class="timeline-entry-inner">
-											<div class="timeline-icon color-3">
-												<i class="icon-code"></i>
-											</div>
-											<div class="timeline-label">
-												<h2 class="mb-2">Web
-													Developer</h2>
-												<h4 class="mb-0"><a href="https://www.uwo.ca/" target="_blank">Western
-														University</a></h4>
-												<span class="text-muted">Apr 2017 - Oct 2017</span>
-												<ul class="mb-0">
-													<li>
-														Improved website availability, reliability, efficiency and
-														technical performance by updating libraries, refactoring
-														back-end architecture and optimizing files and content delivery.
-													</li>
-													<li>
-														Developed reusable and maintainable components for content
-														managers to generate user friendly websites viewed by tens of
-														thousands of current and upcoming students.
-													</li>
-													<li>
-														Interacted and collaborated with cross-functional departments
-														and faculties to implement new designs and features offered by
-														Western’s IT department.
-													</li>
-												</ul>
-											</div>
-										</div>
-									</article>
+  <footer class="footer wrap">
+    <p>© <span id="year">2026</span> Atharva Karekar · Mumbai</p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </footer>
 
-									<article class="timeline-entry begin animate-box"
-										data-animate-effect="fadeInBottom">
-										<div class="timeline-entry-inner">
-											<div class="timeline-icon color-none">
-											</div>
-										</div>
-									</article>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section> -->
-
-
-
-				<section class="colorlib-blog" data-section="blog">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-								data-animate-effect="fadeInLeft">
-								<span class="heading-meta">Read</span>
-								<h2 class="colorlib-heading">Recent Blog</h2>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="blog-entry">
-									<a href="https://dev.to/sedkis" class="blog-img"><img src="https://cdn.worldvectorlogo.com/logos/devto.svg"
-											class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-									<div class="desc">
-										<h3><a href="https://dev.to/sedkis">dev.to</a></h3>
-										<p>Posts regarding all things software development and devops.</p>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="blog-entry">
-									<a href="https://tyk.io/author/sedkytyk-io" class="blog-img"><img src="https://gravatar.com/avatar/79a4124df1f89b66b03996f4e71e58ae.png?s=1200&d=retro"
-											class="img-responsive" alt=""></a>
-									<div class="desc">
-										<h3><a href="https://tyk.io/author/sedkytyk-io/">APIM @ Tyk</a></h3>
-										<p>read about API management, sponsored by Tyk.  Touching on authentication, performance testing, and more.</p>
-									</div>
-								</div>
-							</div> -->
-							<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="blog-entry">
-									<a href="https://medium.com/@atharvakarekar4784" class="blog-img"><img src="https://seeklogo.com/images/M/medium-logo-93CDCF6451-seeklogo.com.png"
-											class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-									<div class="desc">
-										<h3><a href="https://medium.com/@atharvakarekar4784">Medium</a></h3>
-										<p>Other software development focused articles</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="colorlib-contact" data-section="contact" style="padding-bottom: 20em;">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-								<span class="heading-meta">Get in Touch</span>
-								<h2 class="colorlib-heading">Contact</h2>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-5" style="display: flex;">
-								<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-									<div class="colorlib-icon">
-										<a href="mailto:atharvakarekar4784@gmail.com" target="blank"><i class="icon-mail"></i></a>
-									</div>
-									<div class="colorlib-text">
-										<p></p>
-									</div>
-								</div>
-
-								<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-									<div class="colorlib-icon">
-										<a href="https://github.com/Atharvakarekar" target="blank"><i class="icon-github"></i></a>
-									</div>
-									<div class="colorlib-text">
-										<p> </p>
-									</div>
-								</div>
-
-								<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-									<div class="colorlib-icon">
-										<a href="https://www.linkedin.com/in/atharva-karekar-7a90b8202/" target="blank"><i class="icon-linkedin2"></i></a>
-									</div>
-								</div>
-								<br>
-								<br>
-								<br>
-								<br>
-							</div>
-							<!-- <div class="col-md-7 col-md-push-1">
-								<div class="row">
-									<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-										<form action="">
-											<div class="form-group">
-												<input type="text" class="form-control" placeholder="Name">
-											</div>
-											<div class="form-group">
-												<input type="text" class="form-control" placeholder="Email">
-											</div>
-											<div class="form-group">
-												<input type="text" class="form-control" placeholder="Subject">
-											</div>
-											<div class="form-group">
-												<textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-											</div>
-											<div class="form-group">
-												<input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
-											</div>
-										</form>
-									</div>
-								</div>
-							</div> -->
-						</div>
-					</div>
-				</section>
-
-			</div><!-- end:colorlib-main -->
-		</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-
-
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
-
+  <script src="js/site.js" defer></script>
 </body>
-
 </html>

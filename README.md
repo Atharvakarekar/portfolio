@@ -1,7 +1,9 @@
-# portfolio-v2
+# Atharva Karekar · portfolio
 
-Personal website, you can visit it at [www.sedky.ca](https://www.sedky.ca).  
+Personal site: **https://atharvakarekar.github.io/portfolio/**
 
-It's just static JS/CSS, hosted for free using Github Pages.
+A single static page (`index.html`, `css/site.css`, `js/site.js`) with no build step and no frameworks, hosted on GitHub Pages.
+It has light and dark themes and works on mobile.
 
-To fork, simply clone it and open the [index.hmtl](./index.html) file.  You can download VS Code plugin to do live reloading for you while you do development.
+To edit: change the content in `index.html`, then commit and push to `master`. GitHub Pages redeploys automatically.
+To preview locally: `python3 -m http.server` and open http://localhost:8000.
