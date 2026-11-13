@@ -1,0 +1,649 @@
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Trust Moments: Deal Shield + Knock · Truecaller case prototype</title>
+<meta name="description" content="Clickable concept prototype of two Truecaller microtransactions, Deal Shield (₹29) and Knock (₹9), with a live revenue model. Team BitHeads, TechXcelerate '26, SDA Bocconi Asia Center.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trust Moments: Deal Shield + Knock">
+<meta property="og:description" content="Clickable concept prototype for the Truecaller case at TechXcelerate '26: ₹29 to insure a deal with a stranger, ₹9 to reach people who silence unknown callers.">
+<meta property="og:url" content="https://atharvakarekar.github.io/portfolio/trust-moments/">
+<meta property="og:image" content="https://atharvakarekar.github.io/portfolio/trust-moments/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@500;700&display=swap">
+</head><body>
+<style>
+:root{
+  --bg:#F4F2EC; --surface:#FFFFFF; --surface-2:#E9E6DE; --ink:#121A2B; --muted:#565F73; --line:#D8D4C9;
+  --shield:#3651E8; --shield-soft:#E5E9FF; --knock:#B04A15; --knock-fill:#E8743B; --knock-soft:#FBE4D6;
+  --ok:#1E6B3A; --warn:#8A5A00; --bad:#B42318; --focus:#3651E8;
+  --bezel:#0B0F18; --ph-bg:#FBFAF7; --ph-card:#FFFFFF; --ph-fill:#EEF0F4; --ph-ink:#121A2B; --ph-muted:#5B6475; --ph-line:#E3E1DA; --ph-on:#FFFFFF;
+  --ph-shield:#3651E8; --ph-shield-soft:#E9ECFF; --ph-knock:#E8743B; --ph-knock-ink:#A8461A; --ph-knock-soft:#FCE7DA;
+  --ph-ok:#1E6B3A; --ph-ok-soft:#E3F2E7; --ph-warn:#8A5A00; --ph-warn-soft:#FDF0D2; --ph-bad:#B42318; --ph-bad-soft:#FDE4E1; --scrim:rgba(11,15,24,.48);
+  --display:'Space Grotesk', Arial, sans-serif; --body:'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D131F; --surface:#151D2C; --surface-2:#1D2637; --ink:#EDF0F6; --muted:#A3ACBF; --line:#2A3448;
+    --shield:#93A5FF; --shield-soft:#1C2550; --knock:#F29B62; --knock-fill:#E8743B; --knock-soft:#3A2416;
+    --ok:#73D394; --warn:#F2C35F; --bad:#FF8A80; --focus:#93A5FF; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D131F; --surface:#151D2C; --surface-2:#1D2637; --ink:#EDF0F6; --muted:#A3ACBF; --line:#2A3448;
+  --shield:#93A5FF; --shield-soft:#1C2550; --knock:#F29B62; --knock-fill:#E8743B; --knock-soft:#3A2416;
+  --ok:#73D394; --warn:#F2C35F; --bad:#FF8A80; --focus:#93A5FF; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:28px 64px}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:flex-end}
+.eyebrow{font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2.1rem,5.2vw,3.4rem);line-height:1;letter-spacing:-.025em;margin:8px 0 10px;text-wrap:balance}
+h1 .k{color:var(--knock)}
+.lede{max-width:60ch;color:var(--muted);margin:0}
+.disc{font-size:13px;color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:10px 14px;max-width:330px}
+.disc b{color:var(--ink)}
+.tabs{display:flex;gap:4px;background:var(--surface-2);padding:5px;border-radius:14px;width:fit-content;max-width:100%;overflow-x:auto;margin-block:26px 22px}
+.tab{appearance:none;border:0;background:transparent;color:var(--muted);font-weight:700;font-size:15px;padding:10px 16px;border-radius:10px;cursor:pointer;white-space:nowrap;display:flex;gap:8px;align-items:center}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.tab .dot{width:9px;height:9px;border-radius:50%}
+.stage{display:flex;flex-wrap:wrap;gap:32px 40px;align-items:flex-start}
+.devices{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+.devcol{display:flex;flex-direction:column;gap:12px;align-items:center;max-width:100%}
+.devlabel{font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.narr{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:16px;padding-top:4px}
+.progress{display:flex;gap:6px;max-width:320px}
+.progress span{height:4px;flex:1;border-radius:2px;background:var(--line)}
+.steptag{font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.narr h2{font-family:var(--display);font-size:clamp(1.5rem,3vw,1.9rem);line-height:1.12;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.narr p{margin:0;max-width:62ch}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:10px;max-width:62ch}
+.facts li{padding:10px 14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-size:14.5px}
+.seg{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.seg button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 13px;font-weight:700;font-size:13px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.restart{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;max-width:62ch}
+.box h3{margin:0;font-family:var(--display);font-size:18px}
+.box .num{font:700 26px var(--display);font-variant-numeric:tabular-nums;color:var(--knock)}
+input[type=range]{width:100%;accent-color:var(--knock-fill)}
+.phone{width:340px;max-width:100%;height:700px;background:var(--bezel);border-radius:46px;padding:11px;box-shadow:0 34px 60px -34px rgba(8,12,24,.55);flex:none}
+.screen{position:relative;height:100%;background:var(--ph-bg);color:var(--ph-ink);border-radius:36px;overflow:hidden;display:flex;flex-direction:column;font-size:15px;line-height:1.4}
+.notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:92px;height:25px;background:var(--bezel);border-radius:20px;z-index:3}
+.sbar{display:flex;justify-content:space-between;align-items:center;padding:12px 26px 6px;font-weight:700;font-size:13px}
+.sig-bars{display:flex;gap:2px;align-items:flex-end}
+.sig-bars i{display:block;width:3px;background:var(--ph-ink);border-radius:1px}
+.view{flex:1;overflow-y:auto;padding:12px 16px 18px;display:flex;flex-direction:column;gap:12px}
+.ic{width:18px;height:18px;flex:none}
+.ph-search{display:flex;gap:8px;align-items:center;background:var(--ph-fill);border-radius:999px;padding:10px 14px;color:var(--ph-muted);font-size:14px}
+.ph-search span{color:var(--ph-ink);font-variant-numeric:tabular-nums}
+.who{display:flex;gap:12px;align-items:center}
+.av{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:700 18px var(--display);flex:none}
+.av.lg{width:84px;height:84px;font-size:28px}
+.who b,.title{font-family:var(--display);font-size:20px;line-height:1.15;display:block}
+.small{font-size:13px;color:var(--ph-muted)}
+.tag{display:inline-flex;gap:6px;align-items:center;font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:999px;width:fit-content}
+.ok-t{background:var(--ph-ok-soft);color:var(--ph-ok)} .warn-t{background:var(--ph-warn-soft);color:var(--ph-warn)} .bad-t{background:var(--ph-bad-soft);color:var(--ph-bad)}
+.pcard{border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--ph-card);border:1px solid var(--ph-line)}
+.pcard.shield{background:var(--ph-shield-soft);border:1.5px solid var(--ph-shield)}
+.pcard.bad{background:var(--ph-bad-soft);border:1.5px solid var(--ph-bad)}
+.pcard.knock{background:var(--ph-knock-soft);border:1.5px solid var(--ph-knock)}
+.label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:flex;gap:6px;align-items:center}
+.pcard h4{margin:0;font-family:var(--display);font-size:19px;line-height:1.2}
+.pcard ul{margin:0;padding-left:18px;font-size:14px}
+.btn{appearance:none;border:0;cursor:pointer;font-weight:700;font-size:15px;border-radius:999px;padding:12px 16px;width:100%;text-align:center}
+.btn.shield{background:var(--ph-shield);color:var(--ph-on)}
+.btn.knock{background:var(--ph-knock);color:var(--ph-ink)}
+.btn.dark{background:var(--ph-ink);color:var(--ph-bg)}
+.btn.soft{background:var(--ph-fill);color:var(--ph-ink)}
+.btn.ghost{background:transparent;color:var(--ph-muted);padding:6px}
+.btn.bad{background:var(--ph-bad);color:var(--ph-on)}
+.okline{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--ph-ok);font-weight:700}
+.bar-h{display:flex;align-items:center;gap:8px}
+.back{appearance:none;border:0;background:var(--ph-fill);border-radius:50%;width:34px;height:34px;display:grid;place-items:center;cursor:pointer;color:var(--ph-ink)}
+.verdict{display:flex;gap:10px;align-items:center;border-radius:16px;padding:12px 14px;font-weight:700}
+.verdict .vbig{font:700 22px var(--display)}
+.sigl{display:flex;flex-direction:column}
+.sg{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:9px 0;border-top:1px solid var(--ph-line);animation:sgin .4s ease both;animation-delay:calc(var(--i) * 170ms)}
+.sg .k{font-weight:700;font-size:14px}
+.sg .v{font-size:13px;color:var(--ph-muted)}
+@keyframes sgin{from{opacity:.2;transform:translateY(4px)}}
+.ok-c{color:var(--ph-ok)} .warn-c{color:var(--ph-warn)} .bad-c{color:var(--ph-bad)}
+.valrow{display:flex;justify-content:space-between;align-items:baseline;font-size:14px}
+.valrow b{font:700 18px var(--display);font-variant-numeric:tabular-nums}
+.screen input[type=range]{accent-color:var(--ph-shield)}
+.sheetwrap{position:absolute;inset:0;background:var(--scrim);display:flex;align-items:flex-end;z-index:4}
+.sheet{background:var(--ph-bg);width:100%;border-radius:26px 26px 0 0;padding:20px 18px 24px;display:flex;flex-direction:column;gap:10px;animation:up .28s ease both}
+@keyframes up{from{transform:translateY(40%)}}
+.row{display:flex;justify-content:space-between;gap:10px;font-size:14px;border-bottom:1px solid var(--ph-line);padding:8px 0}
+.row span:first-child{color:var(--ph-muted)}
+.row span:last-child{font-weight:700;text-align:right}
+.demo{font-size:12px;text-align:center;color:var(--ph-muted)}
+.cert{background:var(--ph-ink);color:var(--ph-bg);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.cert .id{font:600 13px var(--mono);letter-spacing:.06em;opacity:.8}
+.cert .row{border-color:rgba(255,255,255,.14)}
+.cert .row span:first-child{color:inherit;opacity:.7}
+.big-ok{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--ph-ok-soft);color:var(--ph-ok);align-self:center}
+.big-ok .ic{width:32px;height:32px}
+.center{text-align:center;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--ph-line);background:var(--ph-card);color:var(--ph-ink);border-radius:999px;padding:6px 12px;font-weight:700;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ph-knock);border-color:var(--ph-knock);color:var(--ph-ink)}
+textarea{width:100%;border:1px solid var(--ph-line);border-radius:14px;padding:10px 12px;font:15px var(--body);color:var(--ph-ink);background:var(--ph-card);resize:none}
+.toggle{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;padding:10px 0;border-top:1px solid var(--ph-line)}
+.toggle input{width:20px;height:20px;accent-color:var(--ph-knock)}
+.toggle.off{opacity:.55}
+.pricebar{display:flex;justify-content:space-between;align-items:baseline;font-size:14px}
+.pricebar b{font:700 24px var(--display)}
+.ringwrap{position:relative;width:150px;height:150px;display:grid;place-items:center;align-self:center;margin-block:12px}
+.ringwrap::before,.ringwrap::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--ph-knock);animation:pulse 1.6s ease-out infinite}
+.ringwrap::after{animation-delay:.8s}
+@keyframes pulse{from{transform:scale(.6);opacity:.9}to{transform:scale(1.15);opacity:0}}
+.ringwrap.still::before,.ringwrap.still::after{animation:none;opacity:0}
+.notif{background:var(--ph-card);border:1px solid var(--ph-line);border-radius:18px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;cursor:pointer;text-align:left;width:100%;color:var(--ph-ink);animation:drop .35s ease both}
+.notif.urgent{border:2px solid var(--ph-knock);animation:drop .35s ease both,shake 1.2s ease .4s 2}
+@keyframes drop{from{transform:translateY(-16px);opacity:.2}}
+@keyframes shake{0%,100%{transform:none}20%{transform:rotate(-1.5deg)}40%{transform:rotate(1.5deg)}60%{transform:rotate(-1deg)}80%{transform:rotate(1deg)}}
+.lock{font:700 54px/1 var(--display);text-align:center;letter-spacing:-.02em;margin-top:8px}
+.statusline{display:flex;gap:8px;align-items:center;font-size:14px;font-weight:700;padding:10px 12px;border-radius:12px;background:var(--ph-fill)}
+.count{font:600 22px var(--mono);font-variant-numeric:tabular-nums;text-align:center}
+.rev{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:28px;align-items:start}
+fieldset{border:1px solid var(--line);border-radius:16px;padding:12px 18px 14px;margin:0 0 16px;background:var(--surface);min-width:0}
+legend{font:700 15px var(--display);padding:0 6px;display:flex;gap:8px;align-items:center}
+.field{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.field:first-of-type{border-top:0}
+.field label{font-size:14.5px}
+.field output{font:600 14px var(--mono);font-variant-numeric:tabular-nums}
+.field input{grid-column:1/-1}
+.field small{grid-column:1/-1;color:var(--muted);font-size:12.5px}
+.f-shield input{accent-color:var(--shield)}
+.results{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 12px);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.big{font-family:var(--display);font-size:clamp(2.4rem,6vw,3.5rem);font-weight:700;letter-spacing:-.025em;line-height:1;font-variant-numeric:tabular-nums}
+.sub{color:var(--muted);font-size:14px}
+.split{display:flex;height:14px;border-radius:7px;overflow:hidden;background:var(--surface-2)}
+.split .a{background:var(--shield)} .split .b{background:var(--knock-fill)}
+.kv{display:grid;grid-template-columns:1fr auto;gap:8px 12px;font-size:14.5px}
+.kv b{font-variant-numeric:tabular-nums;text-align:right}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:baseline}
+.lines{font:12.5px/1.7 var(--mono);color:var(--muted);overflow-x:auto;white-space:nowrap;background:var(--surface-2);border-radius:12px;padding:10px 12px}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.foot a{color:inherit}
+@media (max-width:860px){.rev{grid-template-columns:1fr}.results{position:static}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Concept prototype · TechXcelerate '26 · Team BitHeads</div>
+      <h1>Trust Moments: Deal Shield <span class="k">+ Knock</span></h1>
+      <p class="lede">Two microtransactions for Truecaller. Deal Shield (₹29) insures one deal with a stranger. Knock (₹9) gets a verified caller past someone who silences unknown numbers. Click through both flows, then stress-test the revenue model.</p>
+    </div>
+    <p class="disc"><b>Simulated.</b> No real payments, people or numbers. A case-competition concept, not affiliated with Truecaller.</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Prototype sections">
+    <button class="tab" role="tab" id="tab-deal" aria-controls="p-deal" aria-selected="true" data-tab="deal"><span class="dot" style="background:var(--shield)"></span>Deal Shield · ₹29</button>
+    <button class="tab" role="tab" id="tab-knock" aria-controls="p-knock" aria-selected="false" data-tab="knock"><span class="dot" style="background:var(--knock-fill)"></span>Knock · ₹9</button>
+    <button class="tab" role="tab" id="tab-revenue" aria-controls="p-revenue" aria-selected="false" data-tab="revenue"><span class="dot" style="background:var(--ink)"></span>Revenue model</button>
+  </div>
+
+  <section id="p-deal" role="tabpanel" aria-labelledby="tab-deal">
+    <div class="stage">
+      <div class="devcol">
+        <div class="seg" role="group" aria-label="Choose who called">
+          <button data-scen="green" aria-pressed="true">Safe seller</button>
+          <button data-scen="amber" aria-pressed="false">Mixed signals</button>
+          <button data-scen="red" aria-pressed="false">Known scammer</button>
+        </div>
+        <div class="phone"><div class="screen" id="ds-screen"></div></div>
+        <button class="restart" data-act="ds-reset">Restart this flow</button>
+      </div>
+      <div class="narr" id="ds-narr" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="p-knock" role="tabpanel" aria-labelledby="tab-knock" hidden>
+    <div class="stage">
+      <div class="devices">
+        <div class="devcol">
+          <div class="devlabel">Caller · Rohan</div>
+          <div class="phone"><div class="screen" id="kc-screen"></div></div>
+        </div>
+        <div class="devcol">
+          <div class="devlabel">Recipient · Ananya</div>
+          <div class="phone"><div class="screen" id="kr-screen"></div></div>
+        </div>
+      </div>
+      <div class="narr">
+        <div id="k-narr" aria-live="polite" style="display:flex;flex-direction:column;gap:16px"></div>
+        <button class="restart" data-act="k-reset" style="align-self:flex-start">Restart this flow</button>
+        <div class="box">
+          <h3>Why spammers can’t afford to Knock</h3>
+          <label for="spam-calls" class="sub">Calls a spam operation makes per day: <b id="spam-calls-out">10,000</b></label>
+          <input type="range" id="spam-calls" min="1000" max="50000" step="1000" value="10000">
+          <div class="num" id="spam-cost">₹90,000 a day</div>
+          <p class="sub" style="margin:0">…and the number is flagged after the first spam report. A genuine caller pays ₹9 once.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="p-revenue" role="tabpanel" aria-labelledby="tab-revenue" hidden>
+    <div class="presets seg" role="group" aria-label="Scenario presets" style="justify-content:flex-start">
+      <button data-preset="conservative" aria-pressed="false">Conservative</button>
+      <button data-preset="base" aria-pressed="true">Base case (deck)</button>
+      <button data-preset="aggressive" aria-pressed="false">Aggressive</button>
+    </div>
+    <div class="rev">
+      <div>
+        <fieldset class="f-shield"><legend><span class="sw" style="background:var(--shield)"></span>Deal Shield</legend><div id="f-ds"></div></fieldset>
+        <fieldset><legend><span class="sw" style="background:var(--knock-fill)"></span>Knock</legend><div id="f-k"></div></fieldset>
+      </div>
+      <aside class="results" aria-live="polite">
+        <div>
+          <div class="eyebrow">India, year one · gross</div>
+          <div class="big" id="r-total">₹116.9 Cr</div>
+          <div class="sub" id="r-net">Net ≈ ₹106.4 Cr after insurer premium</div>
+        </div>
+        <div class="split" role="img" id="r-split" aria-label="Revenue split"><div class="a" id="r-a"></div><div class="b" id="r-b"></div></div>
+        <div class="kv">
+          <span><span class="sw" style="background:var(--shield)"></span>Deal Shield</span><b id="r-ds">—</b>
+          <span><span class="sw" style="background:var(--knock-fill)"></span>Knock</span><b id="r-k">—</b>
+          <span>Shields sold a year</span><b id="r-ds-n">—</b>
+          <span>Knocks kept a year</span><b id="r-k-n">—</b>
+          <span>Share of Truecaller’s annual sales run-rate</span><b id="r-share">—</b>
+        </div>
+        <div class="lines" id="r-lines"></div>
+        <p class="sub" style="margin:0">Revenue = Users × Conversion × Avg. transaction value × Frequency. Run-rate uses Q2 2026 net sales of SEK 393.2M a quarter at an assumed ₹9 per SEK.</p>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Context used in this concept: Truecaller Q1 and Q2 2026 interim reports (MAU, Premium users, ad decline), Truecaller Fraud Insurance with HDFC ERGO (2024), I4C / MHA cyber-fraud data for 2025, and India’s CNAP caller-name rollout.</span>
+    <span>Built by Team BitHeads for the BeyondX Live AI Hackathon, SDA Bocconi Asia Center.</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+const cr=n=>'₹'+(n/1e7).toLocaleString('en-IN',{minimumFractionDigits:1,maximumFractionDigits:1})+' Cr';
+const P={
+ search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
+ lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+ check:'<path d="M5 12l5 5L20 7"/>',
+ warn:'<path d="M12 3l10 18H2L12 3z"/><path d="M12 10v5"/><path d="M12 18h.01"/>',
+ x:'<path d="M6 6l12 12M18 6L6 18"/>',
+ phone:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+ bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/>',
+ shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/>',
+ verified:'<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>',
+ back:'<path d="M15 5l-7 7 7 7"/>',
+ door:'<path d="M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17"/><path d="M3 21h18"/><circle cx="14.5" cy="12" r=".8"/>'
+};
+const ic=(n,c='')=>`<svg class="ic ${c}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
+const sbar=`<div class="notch"></div><div class="sbar"><span>9:41</span><span class="sig-bars" aria-hidden="true"><i style="height:4px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:13px"></i></span></div>`;
+const statusIcon={ok:'check',warn:'warn',bad:'x'};
+const code=()=>Math.random().toString(36).slice(2,8).toUpperCase();
+const dateIn=d=>new Date(Date.now()+d*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+
+const tabs=[...document.querySelectorAll('[data-tab]')];
+function showTab(id){
+  tabs.forEach(t=>{const on=t.dataset.tab===id;t.setAttribute('aria-selected',on);$('#p-'+t.dataset.tab).hidden=!on;});
+  try{history.replaceState(null,'','#'+id);}catch(e){}
+}
+tabs.forEach(t=>t.addEventListener('click',()=>showTab(t.dataset.tab)));
+const h=(location.hash||'').slice(1); if(['deal','knock','revenue'].includes(h)) showTab(h);
+
+function narr(el,o){
+  const prog=o.total?`<div class="progress" aria-hidden="true">${Array.from({length:o.total},(_,i)=>`<span style="${i<o.step?'background:'+o.color:''}"></span>`).join('')}</div>`:'';
+  el.innerHTML=`${prog}<div class="steptag" style="color:${o.color}">${esc(o.tag)}</div><h2>${esc(o.title)}</h2><p>${o.body}</p>${o.facts?`<ul class="facts">${o.facts.map(f=>`<li>${f}</li>`).join('')}</ul>`:''}`;
+}
+
+const SCEN={
+ green:{name:'Rahul K.',ini:'RK',num:'+91 98204 41207',meta:'Not in contacts · call ended 4m ago',tag:['ok','0 spam reports'],verdict:['ok','Green','Looks safe to deal'],
+  sig:[['ok','3-way name match','Truecaller “Rahul Kumar” = UPI “RAHUL KUMAR” = network “Rahul Kumar”'],['ok','Number age','Active for 6+ years'],['ok','Scam reports, last 90 days','None'],['ok','Calling pattern','Normal: no bursts of calls to strangers'],['ok','Verification','Verified number'],['ok','Community','12 people marked a deal done']]},
+ amber:{name:'Packers 24x7',ini:'P2',num:'+91 70451 88310',meta:'Not in contacts · call ended 2m ago',tag:['warn','1 unconfirmed report'],verdict:['warn','Amber','Deal with care: pay on delivery'],
+  sig:[['warn','3-way name match','Truecaller “Packers 24x7” ≠ UPI “S YADAV”; network name withheld'],['warn','Number age','5 months'],['warn','Scam reports, last 90 days','1, unconfirmed'],['ok','Calling pattern','Steady, business-like volume'],['warn','Verification','Not a verified business'],['ok','Community','3 people marked a deal done']]},
+ red:{name:'Vikas (OLX buyer)',ini:'V',num:'+91 63902 17754',meta:'Not in contacts · call ended 1m ago',tag:['bad','14 fraud reports'],verdict:['bad','Red','Do not pay this number'],
+  sig:[['bad','3-way name match','3 different names across Truecaller, UPI and network'],['bad','Number age','11 days'],['bad','Scam reports, last 30 days','14, for advance-payment fraud'],['bad','Calling pattern','300+ calls to strangers today'],['bad','Verification','None'],['bad','Community','No deals marked done']]}
+};
+const AVC={ok:['var(--ph-shield-soft)','var(--ph-shield)'],warn:['var(--ph-warn-soft)','var(--ph-warn)'],bad:['var(--ph-bad-soft)','var(--ph-bad)']};
+const ds={scen:'green',step:'call',value:8000,id:'',claim:''};
+const price=v=>v<=10000?29:49, cover=v=>v<=10000?10000:25000;
+
+function dsScreen(){
+  const s=SCEN[ds.scen], red=ds.scen==='red', av=AVC[s.tag[0]];
+  let v='';
+  if(ds.step==='call'){
+    v=`<div class="ph-search">${ic('search')}<span>${s.num}</span></div>
+    <div class="who"><div class="av" style="background:${av[0]};color:${av[1]}">${s.ini}</div><div style="min-width:0"><b>${esc(s.name)}</b><div class="small">${s.meta}</div></div></div>
+    <span class="tag ${s.tag[0]}-t">${ic(statusIcon[s.tag[0]])}${s.tag[1]}</span>`;
+    if(!red){
+      v+=`<div class="pcard shield"><div class="label" style="color:var(--ph-shield)">${ic('lock')}Deal Shield · ₹29</div>
+      <h4>About to pay this person?</h4>
+      <ul><li>Trust report with a 3-way name match</li><li>₹10,000 cover for this deal, 7 days</li></ul>
+      <button class="btn shield" data-act="ds-open">Shield this deal — ₹29</button>
+      <button class="btn ghost" data-act="ds-dismiss">Not paying anyone? Dismiss</button></div>`;
+    }else{
+      v+=`<div class="pcard bad"><div class="label" style="color:var(--ph-bad)">${ic('warn')}Likely fraud · free warning</div>
+      <h4>Don’t send money to this number</h4>
+      <div class="small" style="color:var(--ph-ink)">14 people reported it for advance-payment fraud in the last 30 days. Deal Shield isn’t sold on red-flagged numbers.</div>
+      <button class="btn bad" data-act="ds-block">Block and report</button>
+      <button class="btn ghost" data-act="ds-open">See the evidence (free)</button></div>`;
+    }
+    v+=`<div class="okline">${ic('check')}Free spam warnings stay free</div>`;
+  }
+  if(ds.step==='dismissed'){
+    v=`<div class="ph-search">${ic('search')}<span>${s.num}</span></div>
+    <div class="who"><div class="av" style="background:${av[0]};color:${av[1]}">${s.ini}</div><div><b>${esc(s.name)}</b><div class="small">${s.meta}</div></div></div>
+    <div class="pcard"><h4>Card dismissed</h4><div class="small">We won’t show Deal Shield for this number again today. No nagging is part of the trust promise.</div><button class="btn soft" data-act="ds-reset">Back to start</button></div>`;
+  }
+  if(ds.step==='report'||ds.step==='pay'){
+    const vd=s.verdict;
+    v=`<div class="bar-h"><button class="back" data-act="ds-reset" aria-label="Back">${ic('back')}</button><span class="title" style="font-size:18px">Deal Trust Report</span></div>
+    <div class="small">${esc(s.name)} · ${s.num}</div>
+    <div class="verdict ${vd[0]}-t">${ic(statusIcon[vd[0]])}<div><div class="vbig">${vd[1]}</div><div style="font-size:13px">${vd[2]}</div></div></div>
+    <div class="sigl">${s.sig.map((g,i)=>`<div class="sg" style="--i:${i}"><span class="${g[0]}-c">${ic(statusIcon[g[0]])}</span><div><div class="k">${g[1]}</div><div class="v">${esc(g[2])}</div></div></div>`).join('')}</div>`;
+    if(!red){
+      v+=`<div class="pcard shield">
+        <div class="valrow"><label for="ds-value">Deal value</label><b id="ds-vout">${inr(ds.value)}</b></div>
+        <input type="range" id="ds-value" min="500" max="25000" step="500" value="${ds.value}">
+        <div class="valrow"><span>Cover up to</span><b id="ds-cover">${inr(cover(ds.value))}</b></div>
+        ${ds.scen==='amber'?'<div class="small" style="color:var(--ph-warn)">Amber tip: pay on delivery, not in advance. Cover still applies.</div>':''}
+        <button class="btn shield" data-act="ds-pay" id="ds-paybtn">Pay ₹${price(ds.value)} · UPI</button>
+        <div class="demo">Covers this counterparty only, for 7 days</div></div>`;
+    }else{
+      v+=`<div class="pcard bad"><h4>Not covered, on purpose</h4><div class="small" style="color:var(--ph-ink)">We never profit from a red flag. Every signal here is shown free.</div><button class="btn bad" data-act="ds-block">Block and report</button></div>`;
+    }
+  }
+  if(ds.step==='pay'){
+    v+=`<div class="sheetwrap"><div class="sheet" role="dialog" aria-label="Confirm payment">
+      <div class="title">Pay ₹${price(ds.value)} for Deal Shield</div>
+      <div class="row"><span>Counterparty</span><span>${esc(s.name)}</span></div>
+      <div class="row"><span>Deal value</span><span>${inr(ds.value)}</span></div>
+      <div class="row"><span>Cover up to</span><span>${inr(cover(ds.value))}</span></div>
+      <div class="row"><span>Valid until</span><span>${dateIn(7)}</span></div>
+      <button class="btn shield" data-act="ds-confirm">Confirm ₹${price(ds.value)} (demo)</button>
+      <button class="btn ghost" data-act="ds-cancel">Cancel</button>
+      <div class="demo">Simulated UPI. No money moves in this prototype.</div></div></div>`;
+  }
+  if(ds.step==='active'){
+    v=`<div class="big-ok">${ic('shield')}</div>
+    <div class="center" style="display:flex;flex-direction:column;gap:4px"><div class="title">This deal is shielded</div><div class="small">You can share proof of cover with the seller</div></div>
+    <div class="cert"><div class="label">${ic('lock')}Deal Shield active</div><div class="id">DS-${ds.id}</div>
+      <div class="row"><span>Counterparty</span><span>${esc(s.name)}</span></div>
+      <div class="row"><span>Cover up to</span><span>${inr(cover(ds.value))}</span></div>
+      <div class="row"><span>Valid until</span><span>${dateIn(7)}</span></div>
+      <div class="row" style="border:0"><span>Paid</span><span>₹${price(ds.value)}</span></div></div>
+    <div class="pcard"><div class="label">Safe-payment tips</div><ul><li>Pay only after you see the item or the work</li><li>Use UPI to the matched name: ${ds.scen==='green'?'RAHUL KUMAR':'check the payee name'}</li></ul></div>
+    <button class="btn soft" data-act="ds-claim">Something went wrong? Start a claim</button>
+    <button class="btn ghost" data-act="ds-reset">Done</button>`;
+  }
+  if(ds.step==='claim'){
+    v=`<div class="big-ok" style="background:var(--ph-shield-soft);color:var(--ph-shield)">${ic('check')}</div>
+    <div class="center" style="display:flex;flex-direction:column;gap:4px"><div class="title">Claim started</div><div class="small">Reference CL-${ds.claim}</div></div>
+    <div class="pcard"><div class="label">Sent with your claim</div><ul><li>Call log with ${esc(s.name)}</li><li>UPI payment reference</li><li>Trust Report snapshot from before you paid</li></ul></div>
+    <div class="pcard"><div class="label">${ic('phone')}1930 cyber-fraud helpline</div><div class="small">Complaint details are pre-filled, so you don’t have to rebuild the story under stress.</div></div>
+    <button class="btn soft" data-act="ds-reset">Back to start</button>`;
+  }
+  if(ds.step==='blocked'){
+    v=`<div class="big-ok" style="background:var(--ph-bad-soft);color:var(--ph-bad)">${ic('x')}</div>
+    <div class="center" style="display:flex;flex-direction:column;gap:4px"><div class="title">Blocked and reported</div><div class="small">15 people have now reported this number</div></div>
+    <div class="pcard"><div class="small" style="color:var(--ph-ink)">Your report strengthens the scam graph that powers Deal Shield verdicts for everyone. This cost you nothing.</div></div>
+    <button class="btn soft" data-act="ds-reset">Back to start</button>`;
+  }
+  $('#ds-screen').innerHTML=sbar+`<div class="view">${v}</div>`;
+  const r=$('#ds-value');
+  if(r) r.addEventListener('input',()=>{ds.value=+r.value;$('#ds-vout').textContent=inr(ds.value);$('#ds-cover').textContent=inr(cover(ds.value));$('#ds-paybtn').textContent='Pay ₹'+price(ds.value)+' · UPI';});
+  dsNarr();
+}
+function dsNarr(){
+  const el=$('#ds-narr'), C='var(--shield)', red=ds.scen==='red';
+  const N={
+   call: red?{tag:'Red flag · warn, don’t sell',title:'We never profit from a red flag',body:'This number has 14 fraud reports in 30 days. Truecaller shows the warning for free and refuses to sell Deal Shield. The trust promise is visible in the product.',facts:['Free safety stays free: spam ID, scam alerts and red-flag warnings','Deal Shield is offered only on Green and Amber verdicts','Blocking and reporting improve the scam graph for every user']}
+    :{tag:'Step 1 of 4 · The moment',step:1,title:'The card appears only when a deal is live',body:'A call with a non-contact just ended, it lasted over 90 seconds, and the number was searched. Those signals say a deal is likely, so Deal Shield shows up on today’s after-call screen. Without them, nobody sees it.',facts:['Built on the existing Number Search and after-call screen','Trigger signals: non-contact · call over 90 s · number searched or pasted · UPI collect request in SMS','One tap to dismiss, and it stays dismissed']},
+   dismissed:{tag:'Restraint',title:'Dismissing is one tap',body:'A microtransaction that nags erodes trust. One dismissal hides the card for that number.'},
+   report: red?{tag:'Evidence · free',title:'The evidence is free too',body:'Every signal behind a red verdict is shown at no cost. Charging people to learn they are about to be scammed would break trust.'}
+    :{tag:'Step 2 of 4 · What ₹29 buys',step:2,title:'Six signals, one verdict, in about 5 seconds',body:'The three-way name match compares the Truecaller name, the UPI payee name and the network’s KYC name. A mismatch is the classic mule-account tell, and only Truecaller can line all three up. Move the deal-value slider to see the price logic.',facts:['Aggregate signals only. Nobody’s contacts or personal data are shown','₹29 for deals up to ₹10,000 · ₹49 up to ₹25,000','Cover applies to this one counterparty for 7 days']},
+   pay:{tag:'Step 3 of 4 · One tap, no plan',step:3,title:'A UPI payment, not a subscription',body:'Stranger deals happen 2–4 times a year. A ₹529 annual plan overcharges most people, and a free feature can’t fund real insurance. ₹29 against up to ₹10,000 at risk is about 0.3%.',facts:['Loss aversion: a small, certain cost removes a large, uncertain loss','Same insurer rails as Truecaller’s existing Fraud Insurance']},
+   active:{tag:'Step 4 of 4 · Covered',step:4,title:'Proof of cover, plus what to do next',body:'The user leaves with a shareable cover certificate and safe-payment tips. If the deal goes wrong, the claim starts from this screen.',facts:['Trust signal for honest sellers too: “I’m happy to be shielded”','Repeatable: one Shield per counterparty, per deal']},
+   claim:{tag:'After the deal',title:'The claim starts with the evidence attached',body:'Call log, UPI reference and the Trust Report snapshot go with the claim, and the 1930 helpline complaint is pre-filled. Three in four rupees lost to cyber fraud in India are never recovered; speed matters.'},
+   blocked:{tag:'Network effect',title:'Every report makes the next verdict sharper',body:'Blocking and reporting are free. They feed the same graph that makes Deal Shield worth paying for.'}
+  };
+  const o=N[ds.step]; narr(el,{...o,total:o.step?4:0,color:C});
+}
+document.querySelectorAll('[data-scen]').forEach(b=>b.addEventListener('click',()=>{
+  ds.scen=b.dataset.scen; ds.step='call';
+  document.querySelectorAll('[data-scen]').forEach(x=>x.setAttribute('aria-pressed',x===b)); dsScreen();
+}));
+
+const REASONS=['Referral','Deal','Delivery','Job','Personal'];
+const k={step:'dial',rec:'idle',reason:'Referral',note:'Bocconi MBA ’26. 2 min on PM roles?',urgent:false,allowUrgent:true,outcome:'',sentAt:0};
+let kTimers=[], kTick=null;
+const kPrice=()=>k.urgent?19:9;
+function clearK(){kTimers.forEach(clearTimeout);kTimers=[];if(kTick){clearInterval(kTick);kTick=null;}}
+function fmtLeft(){const left=Math.max(0,86400-Math.floor((Date.now()-k.sentAt)/1000));const hh=String(Math.floor(left/3600)).padStart(2,'0'),mm=String(Math.floor(left%3600/60)).padStart(2,'0'),ss=String(left%60).padStart(2,'0');return `${hh}:${mm}:${ss}`;}
+
+function kcScreen(){
+  let v='';
+  const avA=`<div class="av lg" style="background:var(--ph-knock-soft);color:var(--ph-knock-ink)">AS</div>`;
+  if(k.step==='dial'){
+    v=`<div class="ringwrap still">${avA}</div>
+    <div class="center" style="display:flex;flex-direction:column;gap:4px"><div class="title">Ananya S.</div><div class="small">+91 99301 •• 482 · alumna, product lead</div></div>
+    <div style="flex:1"></div>
+    <button class="btn dark" data-act="k-call">${''}Call Ananya</button>
+    <div class="demo">You found her number in the alumni directory</div>`;
+  }
+  if(k.step==='calling'){
+    v=`<div class="ringwrap">${avA}</div><div class="center" style="display:flex;flex-direction:column;gap:4px"><div class="title">Calling…</div><div class="small">Ananya S.</div></div>`;
+  }
+  if(k.step==='failed'){
+    v=`<div class="ringwrap still">${avA}</div>
+    <div class="center" style="display:flex;flex-direction:column;gap:6px"><div class="title">Your call didn’t ring</div><div class="small">Ananya screens unknown callers, so she never saw it.</div></div>
+    <div class="pcard knock"><div class="label" style="color:var(--ph-knock-ink)">${ic('door')}Knock · new</div>
+    <div class="small" style="color:var(--ph-ink)">Send a verified, reason-tagged Knock she can answer in one tap.</div>
+    <button class="btn knock" data-act="k-compose">Knock · ₹9</button>
+    <div class="demo" style="color:var(--ph-ok);font-weight:700">Refunded if unseen in 24 h</div></div>
+    <button class="btn ghost" data-act="k-reset">Try later</button>`;
+  }
+  if(k.step==='compose'||k.step==='pay'){
+    v=`<div class="bar-h"><button class="back" data-act="k-backfail" aria-label="Back">${ic('back')}</button><span class="title" style="font-size:18px">Knock Ananya</span></div>
+    <div class="small" style="font-weight:700;color:var(--ph-ink)">Pick a reason</div>
+    <div class="chips" role="group" aria-label="Reason">${REASONS.map(r=>`<button class="chip" data-reason="${r}" aria-pressed="${k.reason===r}">${r}</button>`).join('')}</div>
+    <label class="small" for="k-note" style="font-weight:700;color:var(--ph-ink)">One line (60 characters)</label>
+    <textarea id="k-note" rows="2" maxlength="60">${esc(k.note)}</textarea>
+    <div class="small">Sent as <b style="color:var(--ph-ink)">Rohan M.</b> ${ic('verified','ok-c')} verified</div>
+    <label class="toggle ${k.allowUrgent?'':'off'}" for="k-urgent"><span><b>Urgent Knock (+₹10)</b><br><span class="small">${k.allowUrgent?'Rings once through her silence':'Ananya doesn’t accept urgent Knocks'}</span></span><input type="checkbox" id="k-urgent" ${k.urgent?'checked':''} ${k.allowUrgent?'':'disabled'}></label>
+    <div style="flex:1"></div>
+    <div class="pricebar"><span>Total</span><b>₹${kPrice()}</b></div>
+    <button class="btn knock" data-act="k-pay">Pay ₹${kPrice()} · UPI</button>`;
+    if(k.step==='pay'){
+      v+=`<div class="sheetwrap"><div class="sheet" role="dialog" aria-label="Confirm Knock payment">
+      <div class="title">Send ${k.urgent?'an urgent ':'a '}Knock</div>
+      <div class="row"><span>To</span><span>Ananya S.</span></div>
+      <div class="row"><span>Reason</span><span>${k.reason}</span></div>
+      <div class="row"><span>Refund</span><span>Automatic if unseen in 24 h</span></div>
+      <button class="btn knock" data-act="k-confirm">Confirm ₹${kPrice()} (demo)</button>
+      <button class="btn ghost" data-act="k-cancel">Cancel</button>
+      <div class="demo">Simulated UPI. No money moves in this prototype.</div></div></div>`;
+    }
+  }
+  if(k.step==='sent'){
+    const seen=k.rec==='open';
+    v=`<div class="big-ok" style="background:var(--ph-knock-soft);color:var(--ph-knock-ink)">${ic('door')}</div>
+    <div class="center" style="display:flex;flex-direction:column;gap:4px"><div class="title">Knock delivered</div><div class="small">${k.reason} · “${esc(k.note)}”</div></div>
+    <div class="statusline">${seen?ic('check','ok-c')+'Seen by Ananya':ic('bell')+'Delivered · not seen yet'}</div>
+    ${seen?'<div class="small center">She’s deciding. You’ll hear back here.</div>':`<div class="small center">Auto-refund of ₹${kPrice()} if unseen in</div><div class="count" id="k-count">${fmtLeft()}</div><button class="btn soft" data-act="k-skip">Skip 24 hours (demo)</button>`}`;
+  }
+  if(k.step==='outcome'){
+    const O={
+      callback:['ok','Ananya is calling you back','Picked up from your Knock in one tap.','Answer'],
+      ring:['ok','Ananya allowed one ring','Call now and it will ring through her silence.','Call now'],
+      notnow:['warn','Ananya saw it and chose “Not now”','Seen Knocks aren’t refunded. She can still call back later.',''],
+      spam:['bad','Your Knock was reported as spam','Your number is flagged and can’t Knock for 30 days. This is what stops spammers.',''],
+      refund:['ok','Not opened in 24 hours','₹'+kPrice()+' refunded to your Truecaller balance. You only pay when you’re seen.','']
+    }[k.outcome];
+    v=`<div class="big-ok" style="background:var(--ph-${O[0]}-soft);color:var(--ph-${O[0]})">${ic(O[0]==='bad'?'x':O[0]==='warn'?'warn':'check')}</div>
+    <div class="center" style="display:flex;flex-direction:column;gap:6px"><div class="title">${O[1]}</div><div class="small">${O[2]}</div></div>
+    <div style="flex:1"></div>
+    ${O[3]?`<button class="btn dark" data-act="k-connect">${ic('phone')} ${O[3]}</button>`:''}
+    <button class="btn ghost" data-act="k-reset">Start again</button>`;
+  }
+  if(k.step==='connected'){
+    v=`<div class="ringwrap still">${avA}</div>
+    <div class="center" style="display:flex;flex-direction:column;gap:4px"><div class="title">Connected</div><div class="small">Ananya S. · via Knock</div></div>
+    <div class="pcard"><div class="small" style="color:var(--ph-ink)">A cold call became a conversation for ₹${kPrice()}. Without Knock, this call never rang.</div></div>
+    <div style="flex:1"></div><button class="btn bad" data-act="k-reset">End call</button>`;
+  }
+  $('#kc-screen').innerHTML=sbar+`<div class="view">${v}</div>`;
+  const note=$('#k-note'); if(note) note.addEventListener('input',()=>{k.note=note.value;});
+  const urg=$('#k-urgent'); if(urg) urg.addEventListener('change',()=>{k.urgent=urg.checked;kcScreen();});
+  if(k.step==='sent'&&k.rec!=='open'){ if(!kTick) kTick=setInterval(()=>{const c=$('#k-count'); if(c) c.textContent=fmtLeft();},1000);} else if(kTick){clearInterval(kTick);kTick=null;}
+}
+function krScreen(){
+  let v=`<div class="lock">9:41</div><div class="small center" style="text-align:center">Sunday, 11 October</div>`;
+  if(k.rec==='idle'){
+    v+=`<div class="pcard" style="margin-top:8px"><div class="label">Call screening</div>
+    <div class="toggle" style="border:0"><span>Silence unknown callers</span><b class="ok-c">On</b></div>
+    <div class="toggle"><span>Allow Knocks</span><b class="ok-c">On</b></div>
+    <label class="toggle" for="k-allow"><span>Allow urgent Knocks to ring once</span><input type="checkbox" id="k-allow" ${k.allowUrgent?'checked':''}></label></div>
+    <div class="small" style="text-align:center">${k.step==='calling'||k.step==='failed'?'1 call silenced just now':'No new Knocks'}</div>`;
+  }
+  if(k.rec==='notif'){
+    const u=k.urgent&&k.allowUrgent;
+    v+=`<button class="notif ${u?'urgent':''}" data-act="k-open"><span class="av" style="width:40px;height:40px;font-size:15px;background:var(--ph-knock-soft);color:var(--ph-knock-ink)">RM</span><span style="min-width:0"><span class="label" style="color:var(--ph-knock-ink)">${u?'Urgent Knock · ringing once':'Knock · paid to reach you'}</span><b style="display:block">Rohan M. · ${k.reason}</b><span class="small">Tap to open</span></span></button>
+    <div class="small" style="text-align:center">Only Knocks get through. Spam stays silenced.</div>`;
+  }
+  if(k.rec==='open'){
+    v+=`<div class="pcard knock"><div class="label" style="color:var(--ph-knock-ink)">${ic('door')}${k.urgent&&k.allowUrgent?'Urgent Knock':'Knock'} · paid to reach you</div>
+    <div class="who"><div class="av" style="background:var(--ph-card);color:var(--ph-knock-ink)">RM</div><div><b>Rohan M. ${ic('verified','ok-c')}</b><div class="small">Verified · 0 spam reports · 4 yrs on Truecaller</div></div></div>
+    <div style="font-size:14px"><b>${k.reason}</b> · ${esc(k.note)}</div></div>
+    <button class="btn dark" data-act="k-out" data-out="callback">${ic('phone')} Call back</button>
+    <button class="btn soft" data-act="k-out" data-out="ring">Let him ring once</button>
+    <div style="display:flex;gap:8px"><button class="btn ghost" data-act="k-out" data-out="notnow">Not now</button><button class="btn ghost" style="color:var(--ph-bad)" data-act="k-out" data-out="spam">Report spam</button></div>`;
+  }
+  if(k.rec==='done'){
+    const D={callback:'Calling Rohan M.…',ring:'Rohan can ring once in the next 10 minutes',notnow:'Knock dismissed',spam:'Reported. Rohan’s number is flagged.',refund:'Knock expired unopened. Rohan was refunded.'}[k.outcome]||'';
+    v+=`<div class="pcard" style="margin-top:8px"><div class="small" style="color:var(--ph-ink)">${D}</div></div>`;
+  }
+  $('#kr-screen').innerHTML=sbar+`<div class="view">${v}</div>`;
+  const al=$('#k-allow'); if(al) al.addEventListener('change',()=>{k.allowUrgent=al.checked; if(!k.allowUrgent) k.urgent=false; kcScreen();});
+  kNarr();
+}
+function kRender(){kcScreen();krScreen();}
+function kNarr(){
+  const C='var(--knock)';
+  const N={
+   dial:{tag:'Step 1 of 4 · The wall',step:1,title:'Rohan needs a referral. Ananya silences strangers.',body:'Tap <b>Call Ananya</b> on the left phone. Like many people tired of spam, Ananya keeps “Silence unknown callers” on, so Rohan’s call will never ring.'},
+   calling:{tag:'Step 1 of 4 · The wall',step:1,title:'Ringing on his side, silence on hers',body:'Spam filtering works. That’s the problem: genuine callers are filtered out with the spam.'},
+   failed:{tag:'Step 1 of 4 · The moment',step:1,title:'A dead end becomes a door',body:'The offer appears exactly when the call fails, on the after-call screen. The need is at its peak, and there is no other way through.',facts:['Ananya’s phone shows “1 call silenced”; she never had to deal with it','Callers not on Truecaller get a Knock link by SMS from the AI Assistant, a new-user funnel']},
+   compose:{tag:'Step 2 of 4 · Say why',step:2,title:'A reason, one line, a verified name',body:'Pick a reason and write one line. Rohan’s verified identity travels with it. Urgent (+₹10) rings once, and only if Ananya allows urgent Knocks. Try switching that off on her phone.',facts:['₹9 standard · ₹19 urgent · 5-pack for ₹39 in placement season','Paying is a costly signal: it tells her he’s serious']},
+   pay:{tag:'Step 2 of 4 · Pay',step:2,title:'Cheaper than a chai, refunded if ignored',body:'Nobody wants a monthly plan to reach one person once. A one-time ₹9 with an automatic refund feels fair.'},
+   sent:{tag:'Step 3 of 4 · Delivered',step:3,title:'Her move',body:k.rec==='open'?'Ananya opened it. Pick her response on the right phone and watch Rohan’s screen update.':'A Knock notification is on Ananya’s phone. <b>Tap it</b> to open, or press <b>Skip 24 hours</b> on Rohan’s phone to see the automatic refund.'},
+   outcome:{tag:'Step 4 of 4 · Outcome',step:4,title:{callback:'One tap turned a cold call into a callback',ring:'One ring, on her terms',notnow:'Seen and declined, fairly',spam:'This is how spam dies',refund:'You only pay when you’re seen'}[k.outcome]||'',body:{callback:'Ananya called back straight from the Knock card. Rohan paid ₹'+kPrice()+'.',ring:'Ananya lets Rohan’s next call ring through once. She stays in control.',notnow:'She saw it, so it isn’t refunded, but nothing was forced on her.',spam:'A spammer pays for every attempt and gets flagged on the first report. At scale, Knocking is unaffordable for them.',refund:'Unopened Knocks are refunded automatically after 24 hours. That keeps the price fair.'}[k.outcome]||''},
+   connected:{tag:'Step 4 of 4 · Outcome',step:4,title:'Connected',body:'This is the value the user pays for: a conversation that would otherwise never have happened.'}
+  };
+  const o=N[k.step]; narr($('#k-narr'),{...o,total:4,color:C});
+}
+const spamIn=$('#spam-calls');
+function spam(){const n=+spamIn.value;$('#spam-calls-out').textContent=n.toLocaleString('en-IN');$('#spam-cost').textContent=inr(n*9)+' a day';}
+spamIn.addEventListener('input',spam);
+
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-act],[data-reason],[data-preset]'); if(!t) return;
+  if(t.dataset.reason){k.reason=t.dataset.reason;kcScreen();krScreen();return;}
+  if(t.dataset.preset){applyPreset(t.dataset.preset);return;}
+  const a=t.dataset.act;
+  switch(a){
+    case 'ds-open': ds.step='report'; break;
+    case 'ds-dismiss': ds.step='dismissed'; break;
+    case 'ds-pay': ds.step='pay'; break;
+    case 'ds-cancel': ds.step='report'; break;
+    case 'ds-confirm': ds.id=code(); ds.step='active'; break;
+    case 'ds-claim': ds.claim=code(); ds.step='claim'; break;
+    case 'ds-block': ds.step='blocked'; break;
+    case 'ds-reset': ds.step='call'; ds.value=8000; break;
+    case 'k-call': k.step='calling'; kTimers.push(setTimeout(()=>{k.step='failed';kRender();},1700)); kRender(); return;
+    case 'k-compose': k.step='compose'; break;
+    case 'k-backfail': k.step='failed'; break;
+    case 'k-pay': k.step='pay'; break;
+    case 'k-cancel': k.step='compose'; break;
+    case 'k-confirm': k.step='sent'; k.sentAt=Date.now(); k.rec='notif'; break;
+    case 'k-open': k.rec='open'; break;
+    case 'k-skip': if(k.rec!=='open'){k.outcome='refund';k.step='outcome';k.rec='done';} break;
+    case 'k-out': k.outcome=t.dataset.out; k.step='outcome'; k.rec='done'; break;
+    case 'k-connect': k.step='connected'; break;
+    case 'k-reset': clearK(); Object.assign(k,{step:'dial',rec:'idle',outcome:'',urgent:false}); break;
+  }
+  if(a&&a.startsWith('ds-')) dsScreen();
+  if(a&&a.startsWith('k-')) kRender();
+});
+
+const F=[
+ {id:'ds_users',g:'ds',label:'Relevant users',min:10,max:150,step:5,fmt:v=>v+'M',hint:'Indians who make at least one stranger deal a year (base: 1 in 5 of 350M MAU)'},
+ {id:'ds_conv',g:'ds',label:'Conversion',min:0.5,max:15,step:0.5,fmt:v=>v+'%',hint:'Share who buy at least once, shown only at high-intent moments'},
+ {id:'ds_atv',g:'ds',label:'Avg. price per Shield',min:19,max:79,step:1,fmt:v=>'₹'+v,hint:'₹29 up to ₹10,000 cover · ₹49 up to ₹25,000'},
+ {id:'ds_freq',g:'ds',label:'Shielded deals per buyer, per year',min:1,max:6,step:0.5,fmt:v=>v+'×'},
+ {id:'ds_ins',g:'ds',label:'Insurer premium per Shield',min:0,max:25,step:1,fmt:v=>'₹'+v,hint:'Paid to the insurance partner; subtracted for net revenue'},
+ {id:'k_users',g:'k',label:'Callers who hit a silenced wall',min:10,max:150,step:5,fmt:v=>v+'M',hint:'Base: ~60M distinct callers reaching 35M people who allow Knocks'},
+ {id:'k_conv',g:'k',label:'Conversion',min:1,max:30,step:1,fmt:v=>v+'%'},
+ {id:'k_atv',g:'k',label:'Avg. price per Knock',min:9,max:19,step:0.5,fmt:v=>'₹'+v,hint:'Mix of ₹9 standard and ₹19 urgent'},
+ {id:'k_freq',g:'k',label:'Knocks per buyer, per month',min:0.5,max:4,step:0.1,fmt:v=>(+v).toFixed(1)+'×'},
+ {id:'k_ref',g:'k',label:'Refunded (unseen in 24 h)',min:0,max:50,step:5,fmt:v=>v+'%'}
+];
+const PRE={
+ conservative:{ds_users:50,ds_conv:3,ds_atv:29,ds_freq:2,ds_ins:12,k_users:40,k_conv:5,k_atv:9.5,k_freq:1.2,k_ref:25},
+ base:{ds_users:70,ds_conv:6,ds_atv:29,ds_freq:2.5,ds_ins:10,k_users:60,k_conv:10,k_atv:10,k_freq:1.5,k_ref:20},
+ aggressive:{ds_users:90,ds_conv:9,ds_atv:35,ds_freq:3,ds_ins:10,k_users:80,k_conv:15,k_atv:11,k_freq:2,k_ref:15}
+};
+const val={...PRE.base};
+function buildFields(){
+  ['ds','k'].forEach(g=>{
+    $('#f-'+g).innerHTML=F.filter(f=>f.g===g).map(f=>`<div class="field"><label for="${f.id}">${f.label}</label><output id="${f.id}-o" for="${f.id}">${f.fmt(val[f.id])}</output><input type="range" id="${f.id}" min="${f.min}" max="${f.max}" step="${f.step}" value="${val[f.id]}">${f.hint?`<small>${f.hint}</small>`:''}</div>`).join('');
+  });
+  F.forEach(f=>{const el=$('#'+f.id);el.addEventListener('input',()=>{val[f.id]=+el.value;$('#'+f.id+'-o').textContent=f.fmt(val[f.id]);document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed','false'));calc();});});
+}
+function applyPreset(p){
+  Object.assign(val,PRE[p]);
+  F.forEach(f=>{$('#'+f.id).value=val[f.id];$('#'+f.id+'-o').textContent=f.fmt(val[f.id]);});
+  document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.preset===p));
+  calc();
+}
+const RUNRATE=393.2e6*4*9;
+function calc(){
+  const shields=val.ds_users*1e6*val.ds_conv/100*val.ds_freq;
+  const dsRev=shields*val.ds_atv;
+  const knocks=val.k_users*1e6*val.k_conv/100*val.k_freq*12*(1-val.k_ref/100);
+  const kRev=knocks*val.k_atv;
+  const gross=dsRev+kRev, net=gross-shields*val.ds_ins;
+  $('#r-total').textContent=cr(gross);
+  $('#r-net').textContent='Net ≈ '+cr(net)+' after insurer premium';
+  $('#r-ds').textContent=cr(dsRev); $('#r-k').textContent=cr(kRev);
+  $('#r-ds-n').textContent=(shields/1e6).toLocaleString('en-IN',{maximumFractionDigits:1})+'M';
+  $('#r-k-n').textContent=(knocks/1e6).toLocaleString('en-IN',{maximumFractionDigits:1})+'M';
+  $('#r-share').textContent=(gross/RUNRATE*100).toFixed(1)+'%';
+  const pa=gross?dsRev/gross*100:0; $('#r-a').style.width=pa+'%'; $('#r-b').style.width=(100-pa)+'%';
+  $('#r-split').setAttribute('aria-label',`Deal Shield ${pa.toFixed(0)}%, Knock ${(100-pa).toFixed(0)}% of gross revenue`);
+  $('#r-lines').innerHTML=
+   `Deal Shield: ${val.ds_users}M × ${val.ds_conv}% × ₹${val.ds_atv} × ${val.ds_freq} = ${cr(dsRev)}<br>`+
+   `Knock: ${val.k_users}M × ${val.k_conv}% × ₹${val.k_atv} × (${(+val.k_freq).toFixed(1)} × 12) × ${100-val.k_ref}% = ${cr(kRev)}<br>`+
+   `Insurer premium: ${(shields/1e6).toLocaleString('en-IN',{maximumFractionDigits:1})}M × ₹${val.ds_ins} = ${cr(shields*val.ds_ins)}`;
+}
+
+dsScreen(); kRender(); spam(); buildFields(); calc();
+})();
+</script>
+
+</body></html>
